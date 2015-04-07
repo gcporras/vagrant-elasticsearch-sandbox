@@ -1,0 +1,4 @@
+# You can override these settings by redefining them on a file named vagrantconfig_local.yml
+memory: 2048
+cpus: 2
+network_ip: "192.168.33.21"
