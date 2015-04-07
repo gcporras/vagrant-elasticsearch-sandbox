@@ -35,6 +35,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # elasticsearch-Master service server.
   config.vm.define "elasticsearch-server" do |service|
+    # If you change this name please change also the value in elasticsearch_proxy_hostname
     service.vm.hostname = "elasticsearch.local"
 
     # Create a private network, which allows host-only access to the machine
@@ -48,6 +49,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       vb.customize ["modifyvm", :id, "--cpus", vagrant_config['cpus']]
     end
 
+    # Provisioning configuration for Ansible.
+    service.vm.provision "ansible" do |ansible|
+      ansible.inventory_path = "ansible/hosts"
+      ansible.playbook = "ansible/site.yml"
+      ansible.limit = "elasticsearch"
+    end
   end
 
 end

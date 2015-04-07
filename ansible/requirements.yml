@@ -1,0 +1,14 @@
+---
+# Partial documentation could be found at:
+# http://docs.ansible.com/galaxy.html#advanced-control-over-role-requirements-files
+# Example for testing a role from your local path. DO NOT ERASE!
+# comment the role if you are creating a new version and symlink the path in folder 'ansible/galaxy_roles'.
+# See an example in README.md
+
+
+# from galaxy
+- src: Stouts.nginx
+  version: 2.0.0
+
+- src: Stouts.elasticsearch
+  version: 2.0.2

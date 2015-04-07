@@ -1,0 +1,18 @@
+---
+# file: site.yml
+- hosts: all
+  roles:
+  - role: Stouts.nginx
+    sudo: yes
+  - role: Stouts.elasticsearch
+    sudo: yes
+    elasticsearch_version: 1.5.0
+    elasticsearch_proxy: yes
+     # If you change this name please change also the value in Vagrantfile
+    elasticsearch_proxy_hostname: elasticsearch.local
+    elasticsearch_plugins:
+      - name: mobz/elasticsearch-head
+      - name: lmenezes/elasticsearch-kopf
+      - name: karmi/elasticsearch-paramedic
+      - name: royrusso/elasticsearch-HQ
+      - name: lukas-vlcek/bigdesk
