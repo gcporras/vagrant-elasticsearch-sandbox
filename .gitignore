@@ -1,0 +1,15 @@
+.idea
+.project
+.pydevproject
+.ssh
+.vagrant
+*.DS_Store
+*.orig
+*.pyc
+*~
+.*.swp
+.*.swo
+atlassian-ide-plugin.xml
+ansible/galaxy_roles
+vagrantconfig_local.yml
+
